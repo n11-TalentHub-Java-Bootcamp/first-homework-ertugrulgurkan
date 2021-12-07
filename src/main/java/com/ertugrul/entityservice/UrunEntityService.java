@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UrunEntityService {
 
-    private UrunDao urunDao;
+    private final UrunDao urunDao;
 
     public UrunEntityService() {
         urunDao = new UrunDao();

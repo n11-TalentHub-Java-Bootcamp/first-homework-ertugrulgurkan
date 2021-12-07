@@ -8,7 +8,7 @@ import java.util.List;
 
 public class KategoriEntityService {
 
-    private KategoriDao kategoriDao;
+    private final KategoriDao kategoriDao;
 
     public KategoriEntityService() {
         kategoriDao = new KategoriDao();

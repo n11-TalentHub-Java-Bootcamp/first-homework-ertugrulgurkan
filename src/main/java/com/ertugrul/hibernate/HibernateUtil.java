@@ -1,7 +1,9 @@
 package com.ertugrul.hibernate;
 
 import com.ertugrul.entity.Kategori;
+import com.ertugrul.entity.Kullanici;
 import com.ertugrul.entity.Urun;
+import com.ertugrul.entity.UrunYorum;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -17,6 +19,8 @@ public class HibernateUtil {
 
             cfg.addAnnotatedClass(Kategori.class);
             cfg.addAnnotatedClass(Urun.class);
+            cfg.addAnnotatedClass(UrunYorum.class);
+            cfg.addAnnotatedClass(Kullanici.class);
 
 
             SessionFactory sessionFactory = cfg.configure("hibernate.cfg.xml").buildSessionFactory();
