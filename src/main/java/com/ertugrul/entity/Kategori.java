@@ -1,6 +1,5 @@
 package com.ertugrul.entity;
 
-
 import javax.persistence.*;
 
 @Entity

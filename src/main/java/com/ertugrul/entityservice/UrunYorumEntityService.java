@@ -1,6 +1,8 @@
 package com.ertugrul.entityservice;
 
 import com.ertugrul.dao.UrunYorumDao;
+import com.ertugrul.dto.UrunDetayDto;
+import com.ertugrul.dto.UrunYorumDto;
 import com.ertugrul.entity.UrunYorum;
 
 import java.util.List;
@@ -21,6 +23,8 @@ public class UrunYorumEntityService {
         return urunYorumDao.findById(id);
     }
 
-
+    public List<UrunYorumDto> findUrunYorumDtoByUrunId(Long urunId) {
+        return urunYorumDao.findUrunYorumDtoByUrunId(urunId);
+    }
 
 }

@@ -1,7 +1,6 @@
 package com.ertugrul.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
