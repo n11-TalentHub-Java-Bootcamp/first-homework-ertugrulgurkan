@@ -1,9 +1,8 @@
 package com.ertugrul.entityservice;
 
 
-import com.ertugrul.dao.KategoriDao;
 import com.ertugrul.dao.KullaniciDao;
-import com.ertugrul.entity.Kategori;
+import com.ertugrul.dto.KullaniciHareketDto;
 import com.ertugrul.entity.Kullanici;
 
 import java.util.List;
@@ -16,7 +15,11 @@ public class KullaniciEntityService {
         kullaniciDao = new KullaniciDao();
     }
 
-    public List<Kullanici> findAll(){
+    public List<Kullanici> findAll() {
         return kullaniciDao.findAll();
+    }
+
+    public List<KullaniciHareketDto> findUserCommentsByUserId(Long id) {
+        return kullaniciDao.findUserCommentsByUserId(id);
     }
 }
