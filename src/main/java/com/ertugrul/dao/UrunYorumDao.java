@@ -1,11 +1,12 @@
 package com.ertugrul.dao;
 
 import com.ertugrul.base.BaseDao;
+import com.ertugrul.dto.UrunYorumDto;
+import com.ertugrul.dto.UrunOzetDto;
 import com.ertugrul.entity.UrunYorum;
 import org.hibernate.query.Query;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
 public class UrunYorumDao extends BaseDao {
@@ -16,7 +17,7 @@ public class UrunYorumDao extends BaseDao {
 
         Query query = getCurrentSession().createQuery(sql);
 
-        return query.list();
+        return (List<UrunYorum>) query.list();
     }
 
     public UrunYorum findById(Long id) {
@@ -29,7 +30,7 @@ public class UrunYorumDao extends BaseDao {
         return (UrunYorum) query.uniqueResult();
     }
 
-    public List findUrunYorumDtoByUrunId(Long urunId) {
+    public List<UrunYorumDto> findUrunYorumDtoByUrunId(Long urunId) {
         String sql = " select " +
                 " new com.ertugrul.dto.UrunYorumDto( urun.adi, kategori.adi, urun.fiyat, kullanici.adi, kullanici.soyadi, kullanici.email, kullanici.telefon, urunYorum.yorum, urunYorum.yorumTarihi ) " +
                 " from UrunYorum urunYorum " +
@@ -40,6 +41,6 @@ public class UrunYorumDao extends BaseDao {
         Query query = getCurrentSession().createQuery(sql);
         query.setParameter("urunId", urunId);
 
-        return query.list();
+        return (List<UrunYorumDto>) query.list();
     }
 }

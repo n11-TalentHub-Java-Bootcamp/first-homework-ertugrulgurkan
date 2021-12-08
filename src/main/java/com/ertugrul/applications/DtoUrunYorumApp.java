@@ -15,6 +15,5 @@ public class DtoUrunYorumApp {
         for (UrunYorumDto urunDetayDto : urunYorumList) {
             System.out.println(urunDetayDto);
         }
-
     }
 }

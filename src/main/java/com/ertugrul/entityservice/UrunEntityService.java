@@ -2,6 +2,7 @@ package com.ertugrul.entityservice;
 
 import com.ertugrul.dao.UrunDao;
 import com.ertugrul.dto.UrunDetayDto;
+import com.ertugrul.dto.UrunOzetDto;
 import com.ertugrul.entity.Urun;
 
 import java.math.BigDecimal;
@@ -37,6 +38,11 @@ public class UrunEntityService {
 
     public List<UrunDetayDto> findAllUrunDetayDtoByKategoriKirilim(Long kirilim) {
         return urunDao.findAllUrunDetayDtoByKategoriKirilim(kirilim);
+    }
+
+
+    public List<UrunOzetDto> findAllUrunOzetDto() {
+        return urunDao.findAllUrunOzetDto();
     }
 
 }

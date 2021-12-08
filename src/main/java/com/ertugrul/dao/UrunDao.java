@@ -2,6 +2,7 @@ package com.ertugrul.dao;
 
 import com.ertugrul.base.BaseDao;
 import com.ertugrul.dto.UrunDetayDto;
+import com.ertugrul.dto.UrunOzetDto;
 import com.ertugrul.entity.Urun;
 import org.hibernate.query.Query;
 
@@ -89,4 +90,16 @@ public class UrunDao extends BaseDao {
         return query.list();
     }
 
+    public List<UrunOzetDto> findAllUrunOzetDto() {
+
+        String sql = " select " +
+                " new com.ertugrul.dto.UrunOzetDto( urun.id , urun.adi, urun.fiyat, count(urunYorum.id) ) " +
+                " from UrunYorum urunYorum, Urun urun " +
+                " where 1=1" +
+                " and urun.id = urunYorum.urun.id" +
+                " group by urun.adi, urun.fiyat, urun.id";
+        Query query = getCurrentSession().createQuery(sql);
+
+        return (List<UrunOzetDto>) query.list();
+    }
 }

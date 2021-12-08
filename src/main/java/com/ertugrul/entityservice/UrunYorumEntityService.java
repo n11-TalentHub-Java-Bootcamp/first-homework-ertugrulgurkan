@@ -1,7 +1,6 @@
 package com.ertugrul.entityservice;
 
 import com.ertugrul.dao.UrunYorumDao;
-import com.ertugrul.dto.UrunDetayDto;
 import com.ertugrul.dto.UrunYorumDto;
 import com.ertugrul.entity.UrunYorum;
 

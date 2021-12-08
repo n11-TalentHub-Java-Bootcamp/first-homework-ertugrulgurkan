@@ -1,6 +1,5 @@
 package com.ertugrul.entityservice;
 
-
 import com.ertugrul.dao.KategoriDao;
 import com.ertugrul.entity.Kategori;
 
