@@ -94,9 +94,8 @@ public class ProductDao extends BaseDao {
 
         String sql = " select " +
                 " new com.ertugrul.dto.ProductSummaryDto( product.id , product.name, product.price, count(productComment.id) ) " +
-                " from ProductComment productComment, Product product " +
+                " from Product product left join ProductComment productComment on product.id = productComment.product.id " +
                 " where 1=1" +
-                " and product.id = productComment.product.id" +
                 " group by product.name, product.price, product.id";
         Query query = getCurrentSession().createQuery(sql);
 
