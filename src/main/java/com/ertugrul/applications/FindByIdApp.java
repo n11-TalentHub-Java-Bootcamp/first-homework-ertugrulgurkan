@@ -1,14 +1,14 @@
 package com.ertugrul.applications;
 
-import com.ertugrul.entity.Urun;
-import com.ertugrul.entityservice.UrunEntityService;
+import com.ertugrul.entity.Product;
+import com.ertugrul.entityservice.ProductEntityService;
 
 public class FindByIdApp {
 
     public static void main(String[] args) {
-        UrunEntityService service = new UrunEntityService();
-        Urun urun = service.findById(1L);
+        ProductEntityService service = new ProductEntityService();
+        Product product = service.findById(1L);
 
-        System.out.println(urun);
+        System.out.println(product);
     }
 }

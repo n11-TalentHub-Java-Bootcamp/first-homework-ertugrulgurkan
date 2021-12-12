@@ -1,11 +1,11 @@
 package com.ertugrul.applications;
 
-import com.ertugrul.entity.Kullanici;
-import com.ertugrul.entity.Urun;
-import com.ertugrul.entity.UrunYorum;
-import com.ertugrul.entityservice.KullaniciEntityService;
-import com.ertugrul.entityservice.UrunEntityService;
-import com.ertugrul.entityservice.UrunYorumEntityService;
+import com.ertugrul.entity.Product;
+import com.ertugrul.entity.ProductComment;
+import com.ertugrul.entity.User;
+import com.ertugrul.entityservice.ProductCommentEntityService;
+import com.ertugrul.entityservice.ProductEntityService;
+import com.ertugrul.entityservice.UserEntityService;
 
 import java.util.List;
 
@@ -13,25 +13,25 @@ public class FindAllApp {
 
     public static void main(String[] args) {
 
-        UrunEntityService service = new UrunEntityService();
-        List<Urun> urunList = service.findAll();
+        ProductEntityService service = new ProductEntityService();
+        List<Product> productList = service.findAll();
 
-        for (Urun urun : urunList) {
-            System.out.println(urun);
+        for (Product product : productList) {
+            System.out.println(product);
         }
 
-        KullaniciEntityService kullaniciEntityService = new KullaniciEntityService();
-        List<Kullanici> kullaniciList = kullaniciEntityService.findAll();
+        UserEntityService userEntityService = new UserEntityService();
+        List<User> userList = userEntityService.findAll();
 
-        for (Kullanici kullanici : kullaniciList) {
-            System.out.println(kullanici);
+        for (User user : userList) {
+            System.out.println(user);
         }
 
-        UrunYorumEntityService urunYorumEntityService = new UrunYorumEntityService();
-        List<UrunYorum> urunYorumList = urunYorumEntityService.findAll();
+        ProductCommentEntityService productCommentEntityService = new ProductCommentEntityService();
+        List<ProductComment> productCommentList = productCommentEntityService.findAll();
 
-        for (UrunYorum urunYorum : urunYorumList) {
-            System.out.println(urunYorum);
+        for (ProductComment productComment : productCommentList) {
+            System.out.println(productComment);
         }
     }
 }
